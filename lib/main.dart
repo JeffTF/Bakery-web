@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hsu_bakery/screens/nav.dart';
+import 'package:hsu_bakery/hsu_cake_web.dart';
+import 'package:hsu_bakery/services/locator.dart';
 
 void main() {
-  runApp(const MyApp());
+  locator();
+  runApp(const HsuCakeWeb());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const NavScreen(),
-    );
-  }
-}

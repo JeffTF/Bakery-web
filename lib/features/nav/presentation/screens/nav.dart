@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hsu_bakery/constants/color.dart';
+import 'package:hsu_bakery/constants/style.dart';
 import 'package:hsu_bakery/features/gallery/presentation/screens/gallery.dart';
+import 'package:hsu_bakery/features/main_page/presentation/main_page.dart';
 import 'package:hsu_bakery/features/main_page/presentation/main_screen.dart';
 import 'package:hsu_bakery/features/nav/presentation/bloc/navigation_cubit.dart';
 import 'package:hsu_bakery/features/nav/presentation/screens/sidebar_menu.dart';
@@ -20,8 +22,8 @@ class _NavScreenState extends State<NavScreen> {
   int currentIndex = 0;
 
   List<Widget> tabs = const [
-   MainScreen(),
-   MainScreen(),
+    MainPage(),
+    MainScreen(),
   ];
 
   final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
@@ -38,6 +40,7 @@ class _NavScreenState extends State<NavScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.sizeOf(context);
     return BlocListener<NavigationCubit, NavigationState>(
       listener: (context, state) {
         if (state is NavigationHome) {
@@ -56,16 +59,52 @@ class _NavScreenState extends State<NavScreen> {
         mobile: Scaffold(
           key: drawerKey,
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: KColor.cPrimaryColor,
+            //toolbarHeight: 80,
+            leading: GestureDetector(
+              child: Image.asset(
+                'assets/images/bakery_logo.png',
+                fit: BoxFit.cover,
+                height: 60,
               ),
-              onPressed: () {
+              onTap: () {
                 drawerKey.currentState!.openDrawer();
               },
             ),
-            backgroundColor: KColor.cWhiteColor,
+            backgroundColor: KColor.cPrimaryColor,
+            title: Text(
+              "Hsu's",
+              style: KStyle.t20TextStyle.copyWith(fontWeight: FontWeight.w600),
+            ),
+            actions: [
+              Text(
+                'Menu',
+                style: KStyle.t20TextStyle,
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              Container(
+                width: size.width * 0.2,
+                decoration: BoxDecoration(
+                    color: KColor.cWhiteColor,
+                    border: Border.all(width: 0.1),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.search)),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              const Icon(Icons.shopping_cart_outlined),
+              const SizedBox(
+                width: 12,
+              ),
+            ],
           ),
           drawer: SideMenu(
             activePage: _currentPage,

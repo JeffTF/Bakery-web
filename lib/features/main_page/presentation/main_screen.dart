@@ -5,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hsu_bakery/constants/color.dart';
 import 'package:hsu_bakery/constants/style.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hsu_bakery/utility/utility.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -46,7 +45,7 @@ class MainScreen extends StatelessWidget {
                 children: [
                   const Icon(Icons.search),
                   const SizedBox(
-                    width: 12,
+                    width: 40,
                   ),
                   Text(
                     'Search',

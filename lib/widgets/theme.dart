@@ -6,7 +6,7 @@ class AppTheme {
   ThemeData getAppTheme() {
     return ThemeData(
       useMaterial3: true,
-      scaffoldBackgroundColor: KColor.cF2WhiteColor,
+      scaffoldBackgroundColor: KColor.cWhiteColor,
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           shape: MaterialStateProperty.all(

@@ -8,7 +8,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: KColor.c3PrimaryColor,
+      backgroundColor: KColor.cPrimaryColor,
       appBar: AppBar(
         title: const Text('Category Screen'),
         centerTitle: true,

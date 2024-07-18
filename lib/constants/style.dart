@@ -9,20 +9,19 @@ class KStyle {
     fontSize: 20,
   );
 
-  static TextStyle t20TextStyle = GoogleFonts.lato(
-    color: KColor.c48GreyColor,
-    fontSize: 20,
-  );
+  static TextStyle t30TextStyle = GoogleFonts.openSans(
+      color: KColor.cTextColor, fontSize: 30, fontWeight: FontWeight.w600);
 
-  static TextStyle tTitleTextStyle = GoogleFonts.lato(
+  static TextStyle t20TextStyle = GoogleFonts.openSans(
+      color: KColor.cTextColor, fontSize: 20, fontWeight: FontWeight.w400);
+
+  static TextStyle tTitleTextStyle = GoogleFonts.openSans(
     color: KColor.cWhiteColor,
     fontSize: 16,
   );
 
-  static TextStyle t16TextStyle = GoogleFonts.lato(
-    color: KColor.c48GreyColor,
-    fontSize: 16,
-  );
+  static TextStyle t16TextStyle = GoogleFonts.openSans(
+      color: KColor.cTextColor, fontSize: 16, fontWeight: FontWeight.w700);
 
   static TextStyle t14TextStyle = GoogleFonts.lato(
     color: KColor.c48GreyColor,
@@ -57,11 +56,11 @@ class KStyle {
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle kTextFieldErrorTextStyle = GoogleFonts.lato(
-    fontSize: 10,
-    letterSpacing: 0.3,
-    color: KColor.cF4RedColor,
-  );
+  // static TextStyle kTextFieldErrorTextStyle = GoogleFonts.lato(
+  //   fontSize: 10,
+  //   letterSpacing: 0.3,
+  //   color: KColor.cF4RedColor,
+  // );
 
   static TextStyle kAlertContentTextStyle = GoogleFonts.poppins(
     color: KColor.c48GreyColor,

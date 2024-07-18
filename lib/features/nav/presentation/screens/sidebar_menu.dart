@@ -24,11 +24,12 @@ class _SideMenuState extends State<SideMenu> {
       backgroundColor: KColor.cPrimaryColor,
       child: Column(
         children: [
-          const DrawerHeader(
-              child: Icon(
-            Icons.webhook_outlined,
-            size: 50,
-          )),
+          DrawerHeader(
+            child: Image.asset(
+              'assets/images/bakery_logo.png',
+              fit: BoxFit.cover,
+            ),
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -38,8 +39,8 @@ class _SideMenuState extends State<SideMenu> {
               icon: SvgPicture.asset(
                 "assets/icons/home.svg",
                 color: activePage == "Home"
-                    ? KColor.c7FPendingColor
-                    : KColor.c48GreyColor,
+                    ? KColor.cSecondaryColor
+                    : KColor.cWhiteColor,
               ),
               onPressed: () {
                 BlocProvider.of<NavigationCubit>(context)
@@ -51,8 +52,8 @@ class _SideMenuState extends State<SideMenu> {
               icon: SvgPicture.asset(
                 "assets/icons/admin_chat.svg",
                 color: activePage == "About"
-                    ? KColor.c7FPendingColor
-                    : KColor.c48GreyColor,
+                    ? KColor.cSecondaryColor
+                    : KColor.cWhiteColor,
               ),
               onPressed: () {
                 BlocProvider.of<NavigationCubit>(context)
@@ -92,20 +93,19 @@ class DrawerListTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: activePage == title ? KColor.c3PrimaryColor : null),
+          color: activePage == title ? KColor.cPrimaryColor : null),
       child: ListTile(
         selected: activePage == title,
         selectedColor: KColor.c48GreyColor,
-        iconColor: KColor.c4ECancelColor,
+        iconColor: KColor.cSecondaryColor,
         onTap: onPressed,
         horizontalTitleGap: 0.0,
         leading: icon,
         title: Text(
           title,
           style: KStyle.t12TextStyle.copyWith(
-            color: activePage == title
-                ? KColor.cPrimaryColor
-                : KColor.kBorderColor,
+            color:
+                activePage == title ? KColor.cTextColor : KColor.c48GreyColor,
             fontSize: 16,
           ),
         ),
